@@ -1,0 +1,223 @@
+.result-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.result-header {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.result-header h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+}
+
+.result-header p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+.result-content {
+    padding: 40px;
+}
+
+.total-score-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 12px;
+}
+
+.score-circle {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.score-value {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.score-total {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.percentage {
+    font-size: 32px;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.section-scores {
+    margin-bottom: 30px;
+}
+
+.section-scores h2 {
+    margin: 0 0 25px 0;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.section-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-card h3 {
+    margin: 0 0 10px 0;
+    color: #444;
+    font-size: 18px;
+}
+
+.section-score {
+    font-size: 24px;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.section-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.section-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 1s ease-out;
+}
+
+.time-taken {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    border: 2px solid #ffc107;
+}
+
+.time-icon {
+    font-size: 28px;
+}
+
+.time-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.time-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.result-footer {
+    text-align: center;
+}
+
+.info-box {
+    background: #d4edda;
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.info-box p {
+    margin: 8px 0;
+    color: #155724;
+    font-size: 15px;
+}
+
+.logout-btn-result {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.logout-btn-result:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-content {
+        padding: 25px;
+    }
+
+    .score-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .score-value {
+        font-size: 48px;
+    }
+}
