@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Auth.css';
 
-const API_URL = const API_URL = "https://online-exam-system-3kc8.onrender.com";
+const API_URL = "https://online-exam-system-3kc8.onrender.com";
 
 const Login = () => {
     const navigate = useNavigate();
