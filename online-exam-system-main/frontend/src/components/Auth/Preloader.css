@@ -1,0 +1,214 @@
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease-out 2.5s forwards;
+}
+
+.preloader-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Logo Animation */
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: logoPopAndMove 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  z-index: 2;
+}
+
+.preloader-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.4));
+}
+
+/* Text Container */
+.text-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: textSwipe 0.8s ease-out 1.2s forwards;
+  text-align: left;
+}
+
+/* First Line - Bold & Uppercase */
+.preloader-title-line1 {
+  color: white;
+  font-size: 34px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Second Line - Uppercase */
+.preloader-title-line2 {
+  color: white;
+  font-size: 34px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  margin: 5px 0 0 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Logo Pop-down and Move Right Animation */
+@keyframes logoPopAndMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.3);
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    transform: translateX(-300px) scale(0.9);
+  }
+}
+
+/* Text Swipe from Center */
+@keyframes textSwipe {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateX(100px);
+  }
+}
+
+/* Overlay Fade Out */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .preloader-content {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .logo-container {
+    animation: logoPopAndMoveTablet 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+  
+  .preloader-logo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .preloader-title-line1,
+  .preloader-title-line2 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+  .text-container {
+    text-align: center;
+    animation: textSwipeTablet 0.8s ease-out 1.2s forwards;
+  }
+  
+  @keyframes logoPopAndMoveTablet {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(0) scale(0.3);
+    }
+    30% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0) scale(1.1);
+    }
+    50% {
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-120px) scale(0.8);
+    }
+  }
+  
+  @keyframes textSwipeTablet {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(80px);
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .preloader-logo {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .preloader-title-line1,
+  .preloader-title-line2 {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+  }
+  
+  @keyframes logoPopAndMoveTablet {
+    100% {
+      transform: translateX(-50%) translateY(-100px) scale(0.7);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .preloader-title-line1,
+  .preloader-title-line2 {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  
+  @keyframes logoPopAndMoveTablet {
+    100% {
+      transform: translateX(-50%) translateY(-80px) scale(0.6);
+    }
+  }
+  
+  @keyframes textSwipeTablet {
+    100% {
+      transform: translateX(-50%) translateY(60px);
+    }
+  }
+}
